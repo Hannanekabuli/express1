@@ -35,7 +35,7 @@ const addProducts = async (event) => {
     try {
         
         const newProduct = {
-            bookName: "Harry Potter",
+            bookName: "Harry Potter ",
             author: "(J: K. Rowling)"
         }
 

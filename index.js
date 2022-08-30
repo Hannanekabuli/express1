@@ -42,17 +42,17 @@ axios.request(options).then(function (response) {
 let products = [
   {
     id: nanoid(),
-    bookName: "The Great Gatsby",
+    bookName: "The Great Gatsby ",
     author: "(F. Scott Fitzgerald)", 
   },
   {
     id: nanoid(),
-    bookName: "Narnia",
+    bookName: "Narnia ",
     author: "(C. S. Lewis)"
   },
   {
     id: nanoid(),
-    bookName: "The Habbit",
+    bookName: "The Habbit ",
     author: "(J. R. R. Tolkien)"
   }
 ]
