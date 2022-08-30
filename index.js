@@ -44,7 +44,6 @@ let products = [
     id: nanoid(),
     bookName: "The Great Gatsby",
     author: "(F. Scott Fitzgerald)", 
-    price: 200
   },
   {
     id: nanoid(),
@@ -75,17 +74,6 @@ app.post("/products", (req, res) => {
     if (!req.body || (!req.body.bookName || !req.body.author)) {
       throw new Error("Data was not provided correctly!")
     }
-
-    /*const productExist = products.find(product => product.bookName == req.body.bookName)
-
-    if (productExist) {
-      throw new Error("Product already exist")
-    }*/
-
-/*  let newProduct = req.body
-    newProduct.id = nanoid()
-    products.push(newProduct)
-    res.json("New Product added!") */
 
     products.push({...req.body, ...{id: nanoid()}})
     res.json({status: "New product added!"}) 
