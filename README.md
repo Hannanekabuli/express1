@@ -10,12 +10,12 @@ Uppgiften lämnas in i tid!
 
 #Installing
 
-npm init
-npm i express
-npm i nodemon
-node index.js
-npm i axios
-npm i nanoid
+npm init,
+npm i express,
+npm i nodemon,
+node index.js,
+npm i axios,
+npm i nanoid,
 npm start
 
 
