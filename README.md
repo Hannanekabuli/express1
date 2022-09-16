@@ -14,12 +14,10 @@ npm init,
 npm i express,
 npm i nodemon,
 node index.js,
-npm i axios,
-npm i nanoid,
 npm start
 
 
 
 #GitHub: https://github.com/Hannanekabuli/express1
 
-#API: https://rapidapi.com/arkasha90-HgHe-ke3uv/api/books17/
+#API: https://dummyjson.com/products 

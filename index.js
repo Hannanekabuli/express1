@@ -1,85 +1,58 @@
-import express from "express";
-import axios from "axios";
-import { nanoid } from "nanoid";
+import express from 'express'
+import fetch from 'node-fetch'
+import { nanoid } from 'nanoid'
+
 const app = express()
 const port = 3000
 
-app.use(express.json())
+app.use(express.json()) 
 app.use("/", express.static("client"))
 
 
-
-app.get("/api/book", async (req, res) => {
-
+app.get("/api/phone", async (req, res) => {
   try {
-
-    const axios = require("axios");
-
-const options = {
-  method: 'POST',
-  url: 'https://books17.p.rapidapi.com/authors/8418015/works',
-  headers: {
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-    'X-RapidAPI-Host': 'books17.p.rapidapi.com'
-  },
-  data: '{"cursor":1}'
-};
-
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
-
-  } catch(err) {
-    res.status(400).json(err.message)
+    const response = await fetch('https://dummyjson.com/products')
+    const data = await response.json() 
+    res.json(data) 
+  }catch(err) {
+    console.error(err)
   }
 })
 
 
-// Lista 
-let products = [
+let productList = [
   {
     id: nanoid(),
-    bookName: "The Great Gatsby ",
-    author: "(F. Scott Fitzgerald)", 
+    name: "Sumsung",
+    productName: "Galaxy Book"
   },
   {
     id: nanoid(),
-    bookName: "Narnia ",
-    author: "(C. S. Lewis)"
+    name: "Apple",
+    productName: "iphone x"
   },
   {
     id: nanoid(),
-    bookName: "The Habbit ",
-    author: "(J. R. R. Tolkien)"
+    name: "Huawei ",
+    productName: "P30"
   }
 ]
 
-
-app.get("/products", (req, res) => {
-  
+app.get("/api/products", (req, res) => {
   try {
-    res.json(products)
-  } catch (err) {
-    res.status(500).json(err.message)
+    res.json(productList)
+  } catch(err) {
+      console.error(err)
   }
 })
 
-//  POST
-app.post("/products", (req, res) => {
-  
-  try {
-    if (!req.body || (!req.body.bookName || !req.body.author)) {
-      throw new Error("Data was not provided correctly!")
-    }
-
-    products.push({...req.body, ...{id: nanoid()}})
-    res.json({status: "New product added!"}) 
-
+app.post("/api/products", (req, res) => { 
+  try { 
+    productList.push({...req.body, ...{id: nanoid()}}) 
+    console.log(productList)
+    res.json("Ny produkt!")  
   } catch (err) {
-    res.status(400).json(err.message)
+    console.error(err)
   }
 
 })
@@ -94,6 +67,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`App is running on port ${port}`);
 })
-
-
-

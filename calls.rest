@@ -1,13 +1,18 @@
-GET http://localhost:3000/api/book
+
+GET http://localhost:3000/api/phone
 
 ###
 
-
-GET http://localhost:3000/products
+GET http://localhost:3000/api/products
 
 ###
 
-POST http://localhost:3000/products
+POST http://localhost:3000/api/products
 Content-Type: application/json
+
+{
+    "name": "",
+    "productName": ""
+}
 
 

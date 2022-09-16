@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     margin: 0px;
+    padding: 0px; 
 }
 
 main {
@@ -8,26 +9,62 @@ main {
     padding: 10% 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5em;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJtbHI0ZI13h5MLBjYc4_4XoQvMo8f4bTtA&usqp=CAU");
     background-size: cover;
     min-height: 100vh;
     text-align: center;
-    color: rgb(255, 255, 255);
     vertical-align: middle;
     display: flex;
     flex-direction: column;
-    /*align-items: flex-end;*/
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-#cart {
-    width: 300px;
-    height: 40px;
-    margin: 0 auto;
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-#createBtn, #collectBtn{
-    width: 200px;
-    height: 40px;
-    margin: 0 auto;
+#Data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    flex-wrap: wrap
+}
+
+#information {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+#saveBtn, #productBtn {
+    width: 170px;
+    height: 35px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#name, #productName {
+    width: 170px;
+    height: 35px;
+}
+
+#loadApi {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.productDiv {
+    margin-left: 40px;
+    margin-right: 40px;
 }
